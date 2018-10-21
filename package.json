@@ -2,16 +2,54 @@
   "name": "boardgames",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts": "2.0.3"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9009 -s public",
+    "precommit": "lint-staged",
+    "build-storybook": "build-storybook -s public"
+  },
+  "dependencies": {
+    "antd": "^3.10.0",
+    "classnames": "^2.2.5",
+    "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-i18next": "^8.1.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "2.0.3",
+    "styled-jsx": "^3.1.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-knobs": "^3.4.3",
+    "@storybook/addon-links": "^3.4.11",
+    "@storybook/addons": "^3.4.11",
+    "@storybook/cli": "^3.4.3",
+    "@storybook/react": "^3.4.11",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-react-require": "^3.0.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-react-app": "^3.0.4",
+    "eslint-plugin-flowtype": "^3.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^1.1.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
+    "stylelint": "^9.6.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0"
   },
   "eslintConfig": {
     "extends": "react-app"
