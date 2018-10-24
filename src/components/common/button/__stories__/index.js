@@ -7,10 +7,10 @@ import Button from '../ButtonComponent';
 
 storiesOf('Button', module).add('buttons', () => (
   <div>
-    <Button onClick={action('clicked')} className="btn-reverse">
+    <Button onClick={action('clicked')} className="button-reverse">
       Hello Button
     </Button>
-    <Button onClick={action('clicked')} className="btn-white">
+    <Button onClick={action('clicked')} className="button-white">
       Hello Button
     </Button>
     <Button onClick={action('clicked')}>Hello Button</Button>
