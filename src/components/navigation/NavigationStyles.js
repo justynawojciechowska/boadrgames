@@ -1,5 +1,4 @@
 import React from 'react';
-import { font } from '../../styleVariables';
 
 const PageWrapperStyles = () => (
   /*language=CSS*/

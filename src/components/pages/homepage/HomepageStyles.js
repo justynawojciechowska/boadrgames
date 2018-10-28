@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { colors } from '../../../styleVariables';
-
 const HomepageStyles = () => (
   /*language=CSS*/
   <style jsx>{`
@@ -13,7 +11,8 @@ const HomepageStyles = () => (
       position: relative;
       display: flex;
       align-items: center;
-      height: 100%;
+      height: calc(100vh - 100px);
+      min-height: 500px;
     }
 
     .homepage__hero-content {
@@ -28,12 +27,23 @@ const HomepageStyles = () => (
       z-index: -1;
     }
 
-    .homepage__button {
-    }
-
     .homepage__hero-subtitle {
       font-size: 2.2rem;
       margin-bottom: 50px;
+    }
+
+    .homepage__search {
+      height: 500px;
+      padding: 100px 0;
+    }
+
+    .homepage__subtitle {
+      text-align: center;
+      width: 100%;
+    }
+
+    .homepage__search-inputs {
+      text-align: center;
     }
   `}</style>
 );

@@ -18,21 +18,6 @@ const PageWrapperStyles = () => (
       color: ${font.color};
     }
 
-    h1 {
-      font-size: 5rem;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    h2 {
-      font-size: 3rem;
-      font-weight: normal;
-    }
-
-    h2 {
-      font-size: 2.4rem;
-    }
-
     p {
       margin: 0 0 5px 0;
       line-height: 1.4;

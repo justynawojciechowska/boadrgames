@@ -52,7 +52,6 @@ const ButtonStyles = props => {
       }
 
       .button-small {
-        font-size: 1.3rem;
         padding: 0 15px;
       }
     `}</style>

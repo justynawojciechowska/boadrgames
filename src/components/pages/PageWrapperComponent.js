@@ -10,7 +10,7 @@ function PageWrapperComponent(props) {
     <main>
       <PageWrapperStyles />
       <Navigation />
-      <div className="container">{props.children}</div>
+      <div>{props.children}</div>
     </main>
   );
 }
