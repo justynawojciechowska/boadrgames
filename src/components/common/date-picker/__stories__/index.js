@@ -2,8 +2,6 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import Input from '../index';
+import DatePicker from '../index';
 
-storiesOf('DatePicker', module).add('date picker', () => (
-  <div>date picker</div>
-));
+storiesOf('DatePicker', module).add('date picker', () => <DatePicker />);

@@ -1,3 +1,6 @@
+/**
+ * {@link https://ant.design/components/input/}
+ */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from 'antd/lib/input';
@@ -10,8 +13,6 @@ export const Group = Input.Group;
 
 const InputComponent = props => {
   const { component: Component, ...rest } = props;
-
-  console.log(<Component />);
 
   return (
     <div className="input__wrapper">
