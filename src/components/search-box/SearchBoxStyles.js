@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, border } from '../../styleVariables';
+import { border } from '../../styleVariables';
 
 const SearchBoxStyles = props => {
   return (

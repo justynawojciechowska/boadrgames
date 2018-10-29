@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PageWrapper from '../PageWrapperComponent';
-import { Button, Heading } from '../../common';
+import { Heading } from '../../common';
 import SearchBox from '../../search-box';
 
 import homepageHero from './assets/hero2.jpg';
