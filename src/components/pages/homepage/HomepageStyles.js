@@ -4,7 +4,7 @@ const HomepageStyles = () => (
   /*language=CSS*/
   <style jsx>{`
     .homepage {
-      height: 550px;
+      padding-bottom: 300px;
     }
 
     .homepage__hero {
@@ -17,6 +17,7 @@ const HomepageStyles = () => (
 
     .homepage__hero-content {
       max-width: 550px;
+      padding-bottom: 50px;
     }
 
     .homepage__hero-img {
@@ -29,21 +30,12 @@ const HomepageStyles = () => (
 
     .homepage__hero-subtitle {
       font-size: 2.2rem;
-      margin-bottom: 50px;
-    }
-
-    .homepage__search {
-      height: 500px;
-      padding: 100px 0;
+      margin-bottom: 30px;
     }
 
     .homepage__subtitle {
       text-align: center;
       width: 100%;
-    }
-
-    .homepage__search-inputs {
-      text-align: center;
     }
   `}</style>
 );

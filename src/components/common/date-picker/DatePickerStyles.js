@@ -1,24 +1,38 @@
 import React from 'react';
 import { colors, font } from '../../../styleVariables';
 
-const ButtonStyles = props => {
+const DatePickerStyles = props => {
   return (
     /*language=CSS*/
     <style jsx>{`
       .date-picker {
-        background-color: ${colors.gray};
-        border-radius: 50%;
+        background-color: ${colors.white};
+        border: 2px solid ${colors.gray};
+        border-radius: 44px;
         display: inline-flex;
         justify-content: center;
         align-items: center;
         position: relative;
         height: 44px;
-        padding-left: 10px;
+        padding-left: 20px;
         width: 250px;
       }
 
-      .date-picker .anticon {
+      .date-picker .anticon-close-circle {
         display: none;
+      }
+
+      .date-picker .anticon-calendar {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .date-picker .anticon-calendar svg {
+        color: ${colors.gray};
+        height: auto;
+        width: 20px;
       }
 
       .date-picker__icon {
@@ -178,6 +192,7 @@ const ButtonStyles = props => {
       .date-picker__dropdown .ant-calendar-my-select a {
         font-size: 1.3rem;
         pointer-events: none;
+        color: ${font.color};
       }
 
       .date-picker__dropdown .ant-calendar-month-select {
@@ -366,4 +381,4 @@ const ButtonStyles = props => {
   );
 };
 
-export default ButtonStyles;
+export default DatePickerStyles;

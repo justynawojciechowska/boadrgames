@@ -3,12 +3,19 @@
  */
 import React from 'react';
 import moment from 'moment';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 import Loader from '../loader';
 
 import DatePickerStyles from './DatePickerStyles';
+import DatePickerLoaderStyles from './DatePickerLoaderStyles';
 
 class DatePickerComponent extends React.Component {
+  static propTypes = {
+    className: PropTypes.string
+  };
+
   DatePicker = null;
 
   state = {
@@ -33,13 +40,23 @@ class DatePickerComponent extends React.Component {
 
   render() {
     if (this.state.isLoading) {
-      return <Loader />;
+      return (
+        <div className={classnames('date-picker-loader', this.props.className)}>
+          <DatePickerLoaderStyles />
+          <Loader />
+        </div>
+      );
     }
 
     const { DatePicker } = this;
 
     return (
-      <div>
+      <div
+        ref={node => {
+          this.container = node;
+        }}
+        className={classnames('date-picker', this.props.className)}
+      >
         <DatePickerStyles />
         <DatePicker
           ranges={{
@@ -52,6 +69,7 @@ class DatePickerComponent extends React.Component {
           dropdownClassName="date-picker__dropdown"
           placeholder={['dd.mm.yyyy', 'dd.mm.yyyy']}
           defaultValue={[moment(), moment()]}
+          getCalendarContainer={() => this.container}
         />
       </div>
     );

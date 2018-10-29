@@ -39,6 +39,13 @@ const InputStyles = props => {
         height: auto;
         width: 20px;
       }
+
+      .input__wrapper .input-group-addon,
+      .input__wrapper .ant-input-group-addon {
+        display: block;
+        margin-bottom: 5px;
+        padding-right: 10px;
+      }
     `}</style>
   );
 };

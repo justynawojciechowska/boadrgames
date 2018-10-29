@@ -4,9 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import Input from '../index';
 
-storiesOf('Input', module).add('buttons', () => (
-  <div>
-    <Input />
-    <Input component={Input.Search} />
-  </div>
-));
+storiesOf('Input', module)
+  .add('classic input', () => <Input />)
+  .add('input with label', () => <Input addonBefore="hello" />)
+  .add('input search', () => <Input component={Input.Search} />);

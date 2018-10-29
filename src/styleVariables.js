@@ -9,3 +9,9 @@ export const font = {
   family: "'Open Sans', sans-serif",
   color: '#303030'
 };
+
+export const border = {
+  small: '4px',
+  medium: '10px',
+  big: '44px'
+};
