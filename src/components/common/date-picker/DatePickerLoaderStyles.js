@@ -1,6 +1,6 @@
-import React from 'react';
-import { colors } from '../../../styleVariables';
 import css from 'styled-jsx/css';
+
+import { colors } from '../../../styleVariables';
 
 const DatePickerLoaderStyles = props => {
   return (

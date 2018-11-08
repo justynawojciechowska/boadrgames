@@ -1,5 +1,6 @@
-import { font } from '../../styleVariables';
 import css from 'styled-jsx/css';
+
+import { font } from '../../styleVariables';
 
 const PageWrapperStyles = () => {
   return (

@@ -1,5 +1,6 @@
-import { border } from '../../styleVariables';
 import css from 'styled-jsx/css';
+
+import { border } from '../../styleVariables';
 
 const SearchBoxStyles = props => {
   return (
