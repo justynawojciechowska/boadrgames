@@ -9,9 +9,11 @@ import homepageHero from './assets/hero2.jpg';
 import HomepageStyles from './HomepageStyles';
 
 function HomepageComponent(props) {
+  const styles = HomepageStyles();
+
   return (
     <PageWrapper>
-      <HomepageStyles />
+      <style jsx>{styles}</style>
       <div className="homepage">
         <section className="container homepage__hero">
           <div className="homepage__hero-content">

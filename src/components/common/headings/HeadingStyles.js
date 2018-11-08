@@ -1,10 +1,12 @@
 import React from 'react';
+import css from 'styled-jsx/css';
+
 import { colors } from '../../../styleVariables';
 
 const InputStyles = props => {
   return (
     /*language=CSS*/
-    <style jsx>{`
+    css`
       h1.heading {
         font-size: 5rem;
         font-weight: 600;
@@ -27,7 +29,7 @@ const InputStyles = props => {
       .heading.white {
         color: ${colors.white};
       }
-    `}</style>
+    `
   );
 };
 

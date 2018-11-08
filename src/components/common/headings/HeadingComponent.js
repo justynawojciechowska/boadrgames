@@ -6,10 +6,11 @@ import HeadingStyles from './HeadingStyles';
 
 const HeadingComponent = props => {
   const { as: Component, children, className, ...rest } = props;
+  const styles = HeadingStyles();
 
   return (
     <div>
-      <HeadingStyles />
+      <style jsx>{styles}</style>
       <Component className={classnames('heading', className)} {...rest}>
         {children}
       </Component>

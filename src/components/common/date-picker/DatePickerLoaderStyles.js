@@ -1,10 +1,11 @@
 import React from 'react';
 import { colors } from '../../../styleVariables';
+import css from 'styled-jsx/css';
 
 const DatePickerLoaderStyles = props => {
   return (
     /*language=CSS*/
-    <style jsx>{`
+    css`
       .date-picker-loader {
         border: 2px solid ${colors.gray};
         border-radius: 44px;
@@ -16,7 +17,7 @@ const DatePickerLoaderStyles = props => {
         padding-left: 10px;
         width: 250px;
       }
-    `}</style>
+    `
   );
 };
 

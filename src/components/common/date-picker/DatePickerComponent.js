@@ -27,10 +27,7 @@ class DatePickerComponent extends React.Component {
   }
 
   async loadDatePicker() {
-    const [{ RangePicker }] = await Promise.all([
-      import('antd/lib/date-picker'),
-      import('antd/lib/style/index.css')
-    ]);
+    const { RangePicker } = await import('antd/lib/date-picker');
     this.DatePicker = RangePicker;
 
     this.setState({
@@ -39,10 +36,13 @@ class DatePickerComponent extends React.Component {
   }
 
   render() {
+    const loaderStyles = DatePickerLoaderStyles();
+    const datePickerStyles = DatePickerStyles();
+
     if (this.state.isLoading) {
       return (
         <div className={classnames('date-picker-loader', this.props.className)}>
-          <DatePickerLoaderStyles />
+          <style jsx>{loaderStyles}</style>
           <Loader />
         </div>
       );
@@ -57,7 +57,9 @@ class DatePickerComponent extends React.Component {
         }}
         className={classnames('date-picker', this.props.className)}
       >
-        <DatePickerStyles />
+        <style jsx global>
+          {datePickerStyles}
+        </style>
         <DatePicker
           ranges={{
             Dziś: [moment(), moment()],

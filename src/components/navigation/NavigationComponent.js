@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button } from '../common';
-
 import NavigationStyles from './NavigationStyles';
 
 function NavigationComponent(props) {
+  const styles = NavigationStyles();
+
   return (
     <nav className="navigation">
-      <Button.Styles />
-      <NavigationStyles />
+      <style jsx>{styles}</style>
       <div className="container navigation__container">
         <div className="navigation__left">
           <Link className="navigation__main-page" href="/" to="/">

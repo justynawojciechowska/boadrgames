@@ -1,10 +1,10 @@
-import React from 'react';
 import { border } from '../../styleVariables';
+import css from 'styled-jsx/css';
 
 const SearchBoxStyles = props => {
   return (
     /*language=CSS*/
-    <style jsx>{`
+    css`
       .search-box {
         background-color: #efefef;
         box-shadow: 5px 5px 60px 10px rgba(179, 179, 179, 0.2);
@@ -34,7 +34,7 @@ const SearchBoxStyles = props => {
       .search-box .search-box__date-picker {
         width: 100%;
       }
-    `}</style>
+    `
   );
 };
 

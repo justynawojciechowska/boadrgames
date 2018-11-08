@@ -5,11 +5,13 @@ import { Button, Input, DatePicker } from '../common';
 import SearchBoxStyles from './SearchBoxStyles';
 
 function SearchBoxComponent(props) {
+  const styles = SearchBoxStyles();
+
   return (
     <div className="search-box">
-      <SearchBoxStyles />
+      <style jsx>{styles}</style>
       <p className="search-box__title">Wyszukaj rozgrywki w Twojej okolicy</p>
-      <Input component={Input.Search} addonBefore="Nazwa gry" />
+      <Input addonBefore="Nazwa gry" />
       <Input addonBefore="Miasto" />
       <div>
         <p>Data</p>

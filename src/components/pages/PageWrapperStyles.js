@@ -1,9 +1,10 @@
-import React from 'react';
 import { font } from '../../styleVariables';
+import css from 'styled-jsx/css';
 
-const PageWrapperStyles = () => (
-  /*language=CSS*/
-  <style jsx>{`
+const PageWrapperStyles = () => {
+  return (
+    /*language=CSS*/
+    css.global`
     * {
       box-sizing: border-box;
     }
@@ -38,7 +39,8 @@ const PageWrapperStyles = () => (
       margin: 0 auto;
       padding: 0 20px;
     }
-  `}</style>
-);
+  `
+  );
+};
 
 export default PageWrapperStyles;

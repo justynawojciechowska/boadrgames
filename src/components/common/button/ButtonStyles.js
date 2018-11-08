@@ -1,10 +1,12 @@
 import React from 'react';
+import css from 'styled-jsx/css';
+
 import { colors } from '../../../styleVariables';
 
 const ButtonStyles = props => {
   return (
     /*language=CSS*/
-    <style jsx>{`
+    css`
       button,
       .button {
         background-color: ${colors.primary};
@@ -55,7 +57,7 @@ const ButtonStyles = props => {
         font-size: 1.3rem;
         padding: 0 15px;
       }
-    `}</style>
+    `
   );
 };
 

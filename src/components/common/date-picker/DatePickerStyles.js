@@ -1,10 +1,11 @@
 import React from 'react';
 import { colors, font } from '../../../styleVariables';
+import css from 'styled-jsx/css';
 
 const DatePickerStyles = props => {
   return (
     /*language=CSS*/
-    <style jsx>{`
+    css.global`
       .date-picker {
         background-color: ${colors.white};
         border: 2px solid ${colors.gray};
@@ -377,7 +378,7 @@ const DatePickerStyles = props => {
         animation-play-state: running;
         pointer-events: none;
       }
-    `}</style>
+    `
   );
 };
 

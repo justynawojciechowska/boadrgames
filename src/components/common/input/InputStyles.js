@@ -1,10 +1,12 @@
 import React from 'react';
+import css from 'styled-jsx/css';
+
 import { colors } from '../../../styleVariables';
 
 const InputStyles = props => {
   return (
     /*language=CSS*/
-    <style jsx>{`
+    css.global`
       .input__wrapper {
         margin-bottom: 10px;
       }
@@ -46,7 +48,7 @@ const InputStyles = props => {
         margin-bottom: 5px;
         padding-right: 10px;
       }
-    `}</style>
+    `
   );
 };
 
