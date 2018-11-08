@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 
 import ButtonStyles from './ButtonStyles';
 
-const Button = ({ onClick, className, children, ...props }) => (
-  <button className={className} onClick={onClick}>
-    {children}
-    <ButtonStyles {...props} />
-  </button>
-);
+const Button = ({ onClick, className, children, ...props }) => {
+  const styles = ButtonStyles(props);
+  return (
+    <button className={className} onClick={onClick}>
+      {children}
+      <style jsx>{styles}</style>
+    </button>
+  );
+};
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,

@@ -1,34 +1,33 @@
 import React from 'react';
 
 import PageWrapper from '../PageWrapperComponent';
-import { Button } from '../../common';
+import { Heading } from '../../common';
+import SearchBox from '../../search-box';
 
 import homepageHero from './assets/hero2.jpg';
 
 import HomepageStyles from './HomepageStyles';
 
 function HomepageComponent(props) {
+  const styles = HomepageStyles();
+
   return (
     <PageWrapper>
-      <HomepageStyles />
+      <style jsx>{styles}</style>
       <div className="homepage">
-        <div className="homepage__hero">
+        <section className="container homepage__hero">
           <div className="homepage__hero-content">
-            <h1>
-              Zagraj ze mną <br /> łączymy miłośników gier planszowych
-            </h1>
+            <Heading as="h1">Zagraj ze mną</Heading>
             <p className="homepage__hero-subtitle">
-              Portal dla miłośników gier planszowych
+              Pierwszy portal łączący miłośników
               <br />
-              Umawiaj się, graj, poznawaj
+              gier planszowych
             </p>
-            <Button className="homepage__button button-big">
-              Wyszukaj gry
-            </Button>
+            <SearchBox />
           </div>
 
-          <img className="homepage__hero-img" src={homepageHero} alt="" />
-        </div>
+          <img className="homepage__hero-img" src={homepageHero} alt="Hero" />
+        </section>
       </div>
     </PageWrapper>
   );

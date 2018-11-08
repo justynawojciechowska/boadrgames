@@ -6,11 +6,15 @@ import Navigation from '../navigation';
 import PageWrapperStyles from './PageWrapperStyles';
 
 function PageWrapperComponent(props) {
+  const styles = PageWrapperStyles();
+
   return (
     <main>
-      <PageWrapperStyles />
       <Navigation />
-      <div className="container">{props.children}</div>
+      <div>{props.children}</div>
+      <style jsx global>
+        {styles}
+      </style>
     </main>
   );
 }

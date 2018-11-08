@@ -1,9 +1,11 @@
-import React from 'react';
+import css from 'styled-jsx/css';
+
 import { font } from '../../styleVariables';
 
-const PageWrapperStyles = () => (
-  /*language=CSS*/
-  <style jsx>{`
+const PageWrapperStyles = () => {
+  return (
+    /*language=CSS*/
+    css.global`
     * {
       box-sizing: border-box;
     }
@@ -16,21 +18,6 @@ const PageWrapperStyles = () => (
       font-family: ${font.family};
       font-size: 1.4rem;
       color: ${font.color};
-    }
-
-    h1 {
-      font-size: 5rem;
-      font-weight: 600;
-      line-height: 1.3;
-    }
-
-    h2 {
-      font-size: 3rem;
-      font-weight: normal;
-    }
-
-    h2 {
-      font-size: 2.4rem;
     }
 
     p {
@@ -53,7 +40,8 @@ const PageWrapperStyles = () => (
       margin: 0 auto;
       padding: 0 20px;
     }
-  `}</style>
-);
+  `
+  );
+};
 
 export default PageWrapperStyles;
