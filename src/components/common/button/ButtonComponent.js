@@ -1,14 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ButtonStyles from './ButtonStyles';
+import buttonStyles from './ButtonStyles';
 
 const Button = ({ onClick, className, children, ...props }) => {
-  const styles = ButtonStyles(props);
   return (
     <button className={className} onClick={onClick}>
       {children}
-      <style jsx>{styles}</style>
+      <style jsx>{buttonStyles}</style>
+      {/*language=CSS*/}
+      <style jsx>
+        {`
+          button {
+            width: ${props.big ? '180px' : 'auto'};
+          }
+        `}
+      </style>
     </button>
   );
 };

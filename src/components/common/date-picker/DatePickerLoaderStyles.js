@@ -15,7 +15,7 @@ const DatePickerLoaderStyles = props => {
         position: relative;
         height: 44px;
         padding-left: 10px;
-        width: 250px;
+        width: 100%;
       }
     `
   );

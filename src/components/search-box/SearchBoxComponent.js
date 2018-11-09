@@ -17,7 +17,9 @@ function SearchBoxComponent(props) {
         <p>Data</p>
         <DatePicker className="search-box__date-picker" />
       </div>
-      <Button className="button-big search-box__button">Szukaj</Button>
+      <div className="search-box__button">
+        <Button big>Szukaj</Button>
+      </div>
     </div>
   );
 }

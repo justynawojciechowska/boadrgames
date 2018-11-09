@@ -16,7 +16,7 @@ const DatePickerStyles = props => {
         position: relative;
         height: 44px;
         padding-left: 20px;
-        width: 250px;
+        width: 100%;
       }
 
       .date-picker .anticon-close-circle {

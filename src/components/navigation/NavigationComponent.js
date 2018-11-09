@@ -11,8 +11,8 @@ function NavigationComponent(props) {
       <style jsx>{styles}</style>
       <div className="container navigation__container">
         <div className="navigation__left">
-          <Link className="navigation__main-page" href="/" to="/">
-            Zagraj ze mną
+          <Link href="/" to="/">
+            <span className="navigation__main-page">Zagraj ze mną</span>
           </Link>
         </div>
 
