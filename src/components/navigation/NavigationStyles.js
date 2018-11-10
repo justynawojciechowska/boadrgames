@@ -3,9 +3,14 @@ import css from 'styled-jsx/css';
 /*language=CSS*/
 const PageWrapperStyles = css`
   .navigation {
+    background-color: #fff;
     height: 100px;
     display: flex;
     align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
   }
 
   .navigation__container {
