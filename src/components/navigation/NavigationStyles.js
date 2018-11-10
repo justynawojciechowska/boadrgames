@@ -1,5 +1,7 @@
 import css from 'styled-jsx/css';
 
+import { layer } from '../../styleVariables';
+
 /*language=CSS*/
 const PageWrapperStyles = css`
   .navigation {
@@ -11,6 +13,7 @@ const PageWrapperStyles = css`
     left: 0;
     top: 0;
     width: 100%;
+    z-index: ${layer.highest};
   }
 
   .navigation__container {
