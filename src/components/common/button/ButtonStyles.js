@@ -55,4 +55,5 @@ const buttonStyles = css`
     padding: 0 15px;
   }
 `;
+
 export default buttonStyles;

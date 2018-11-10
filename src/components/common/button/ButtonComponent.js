@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
-import buttonStyles from './ButtonStyles';
+import styles from './ButtonStyles';
 
 const Button = ({ onClick, className, children, ...props }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <button className={classnames('button', className)} onClick={onClick}>
       {children}
-      <style jsx>{buttonStyles}</style>
+      <style jsx>{styles}</style>
       {/*language=CSS*/}
       <style jsx>
         {`
