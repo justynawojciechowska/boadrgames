@@ -15,3 +15,11 @@ export const border = {
   medium: '10px',
   big: '44px'
 };
+
+export const layer = {
+  highest: 1000,
+  medium3: 300,
+  medium2: 200,
+  medium: 100,
+  lowest: 10
+};

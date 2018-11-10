@@ -1,11 +1,19 @@
 import css from 'styled-jsx/css';
 
+import { layer } from '../../styleVariables';
+
 /*language=CSS*/
 const PageWrapperStyles = css`
   .navigation {
+    background-color: #fff;
     height: 100px;
     display: flex;
     align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: ${layer.highest};
   }
 
   .navigation__container {

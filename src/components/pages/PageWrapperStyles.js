@@ -2,10 +2,8 @@ import css from 'styled-jsx/css';
 
 import { font } from '../../styleVariables';
 
-const PageWrapperStyles = () => {
-  return (
-    /*language=CSS*/
-    css.global`
+/*language=CSS*/
+const PageWrapperStyles = css.global`
     * {
       box-sizing: border-box;
     }
@@ -40,8 +38,10 @@ const PageWrapperStyles = () => {
       margin: 0 auto;
       padding: 0 20px;
     }
-  `
-  );
-};
+    
+    .page-wrapper {
+      padding-top: 100px;
+    }
+  `;
 
 export default PageWrapperStyles;
