@@ -9,6 +9,12 @@ const InputStyles = props => {
       .input__wrapper {
         margin-bottom: 10px;
       }
+      
+      .input-wrapper,
+      .input-group-wrapper {
+        display: inline-block;
+        width: 100%;
+      }
 
       .input__wrapper .ant-input,
       .input:not(.ant-input-affix-wrapper) {
@@ -26,6 +32,7 @@ const InputStyles = props => {
 
       .input {
         position: relative;
+        width: 100%;
       }
 
       .input .ant-input-suffix {

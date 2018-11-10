@@ -1,3 +1,4 @@
+import React from 'react';
 import css from 'styled-jsx/css';
 
 import { border } from '../../styleVariables';
@@ -11,7 +12,7 @@ const SearchBoxStyles = props => {
         box-shadow: 5px 5px 60px 10px rgba(179, 179, 179, 0.2);
         border-radius: ${border.medium};
         padding: 40px;
-        width: 400px;
+        width: 360px;
       }
 
       .search-box .input,
@@ -28,8 +29,8 @@ const SearchBoxStyles = props => {
       }
 
       .search-box__button {
-        display: block;
         margin: 40px auto 0;
+        text-align: center;
       }
 
       .search-box .search-box__date-picker {
