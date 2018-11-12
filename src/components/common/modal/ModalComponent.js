@@ -11,7 +11,8 @@ import modalStyles from './ModalStyles';
 
 class ModalComponent extends React.Component {
   static propTypes = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    modalClassName: PropTypes.string
   };
 
   Modal = null;
@@ -47,19 +48,20 @@ class ModalComponent extends React.Component {
     }
 
     const { Modal } = this;
-    const { className, ...props } = this.props;
+    const { className, modalClassName, ...props } = this.props;
 
     return (
-      <div
-        ref={node => {
-          this.container = node;
-        }}
-        className={classnames('modal', className)}
-      >
+      <div className={classnames('modal-wrapper', className)}>
         <style jsx global>
           {modalStyles}
         </style>
-        <Modal centered destroyOnClose {...props} />
+        <Modal
+          className={classnames('modal', modalClassName)}
+          centered
+          width={1000}
+          destroyOnClose
+          {...props}
+        />
       </div>
     );
   }

@@ -5,18 +5,30 @@ import { Modal } from '../common';
 import LoginForm from './LoginFormComponent';
 import RegisterForm from './RegisterFormComponent';
 
+import styles from './AccountStyles';
+
 const LOGIN_FORM = 'login';
 const REGISTER_FORM = 'register';
 
 function AccountFormComponent(props) {
   return (
     <Modal
+      modalClassName="account-modal"
       visible={props.formVisible}
       onCancel={props.onHideForm}
       footer={null}
     >
-      {props.formType === LOGIN_FORM && <LoginForm />}
-      {props.formType === REGISTER_FORM && <RegisterForm />}
+      <style jsx global>
+        {styles}
+      </style>
+      <div className="account-modal__wrapper">
+        <div className="account-modal__form">
+          {props.formType === LOGIN_FORM && <LoginForm />}
+          {props.formType === REGISTER_FORM && <RegisterForm />}
+        </div>
+
+        <div className="account-modal__image" />
+      </div>
     </Modal>
   );
 }

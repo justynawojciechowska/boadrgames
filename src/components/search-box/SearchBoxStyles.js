@@ -11,7 +11,7 @@ const SearchBoxStyles = props => {
         box-shadow: 5px 5px 60px 10px rgba(179, 179, 179, 0.2);
         border-radius: ${border.medium};
         padding: 40px;
-        width: 360px;
+        width: 400px;
       }
 
       .search-box .input,

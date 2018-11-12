@@ -11,13 +11,12 @@ const HomepageStyles = () => {
       .homepage__hero {
         position: relative;
         display: flex;
-        align-items: center;
         height: calc(100vh - 100px);
         min-height: 500px;
       }
 
       .homepage__hero-content {
-        max-width: 550px;
+        max-width: 400px;
         padding-bottom: 50px;
       }
 
@@ -25,7 +24,7 @@ const HomepageStyles = () => {
         position: absolute;
         max-height: 1000px;
         top: -150px;
-        right: -50px;
+        right: -80px;
         z-index: -1;
       }
 

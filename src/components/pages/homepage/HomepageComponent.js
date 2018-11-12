@@ -19,9 +19,7 @@ function HomepageComponent(props) {
           <div className="homepage__hero-content">
             <Heading as="h1">Zagraj ze mną</Heading>
             <p className="homepage__hero-subtitle">
-              Pierwszy portal łączący miłośników
-              <br />
-              gier planszowych
+              Pierwszy portal łączący miłośników gier planszowych
             </p>
             <SearchBox />
           </div>
