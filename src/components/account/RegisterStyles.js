@@ -1,7 +1,5 @@
 import css from 'styled-jsx/css';
 
-import { colors, border } from '../../styleVariables';
-
 /*language=CSS*/
 const RegisterStyles = css`
   .register__footer {
