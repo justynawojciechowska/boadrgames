@@ -50,12 +50,14 @@ class DatePickerComponent extends React.Component {
 
     const { DatePicker } = this;
 
+    const { className, ...rest } = this.props;
+
     return (
       <div
         ref={node => {
           this.container = node;
         }}
-        className={classnames('date-picker', this.props.className)}
+        className={classnames('date-picker', className)}
       >
         <style jsx global>
           {datePickerStyles}
@@ -72,6 +74,7 @@ class DatePickerComponent extends React.Component {
           placeholder={['dd.mm.yyyy', 'dd.mm.yyyy']}
           defaultValue={[moment(), moment()]}
           getCalendarContainer={() => this.container}
+          {...rest}
         />
       </div>
     );

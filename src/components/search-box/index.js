@@ -3,6 +3,6 @@ import SearchBoxContainer from './SearchBoxContainer';
 
 import SearchBoxComponent from './SearchBoxComponent';
 
-export default function SearchBox() {
-  return <SearchBoxContainer component={SearchBoxComponent} />;
+export default function SearchBox(props) {
+  return <SearchBoxContainer {...props} component={SearchBoxComponent} />;
 }
