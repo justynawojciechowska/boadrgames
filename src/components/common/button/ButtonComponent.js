@@ -4,16 +4,16 @@ import classnames from 'classnames';
 
 import styles from './ButtonStyles';
 
-const Button = ({ onClick, className, children, ...props }) => {
+const Button = ({ className, children, big, ...props }) => {
   return (
-    <button className={classnames('button', className)} onClick={onClick}>
+    <button className={classnames('button', className)} {...props}>
       {children}
       <style jsx>{styles}</style>
       {/*language=CSS*/}
       <style jsx>
         {`
           button {
-            width: ${props.big ? '180px' : 'auto'};
+            width: ${big ? '180px' : 'auto'};
           }
         `}
       </style>
@@ -24,7 +24,7 @@ const Button = ({ onClick, className, children, ...props }) => {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  onClick: PropTypes.func
+  big: PropTypes.bool
 };
 
 export default Button;

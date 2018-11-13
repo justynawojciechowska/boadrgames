@@ -1,16 +1,59 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 class SearchBoxContainer extends React.Component {
   static propTypes = {
-    component: PropTypes.func.isRequired
+    component: PropTypes.func.isRequired,
+
+    location: PropTypes.shape({
+      pathname: PropTypes.string
+    })
+  };
+
+  state = {
+    game: '',
+    city: '',
+    date: '',
+    redirect: null
+  };
+
+  redirect = (pathname = '/search-results', state = {}) => {
+    if (
+      pathname === '/search-results' &&
+      pathname !== this.props.location.pathname
+    ) {
+      this.setState({ redirect: { pathname, state } });
+    }
+  };
+
+  handleInputChange = (event, inputType) => {
+    this.setState({
+      [inputType]: event.target.value
+    });
+  };
+
+  handleDateChange = date => {
+    this.setState({ date });
+  };
+
+  handleSearch = () => {
+    this.redirect();
   };
 
   render() {
     const { component: Component, ...rest } = this.props;
 
-    return <Component {...rest} />;
+    return (
+      <Component
+        {...rest}
+        {...this.state}
+        onSearch={this.handleSearch}
+        onInputChange={this.handleInputChange}
+        onDateChange={this.handleDateChange}
+      />
+    );
   }
 }
 
-export default SearchBoxContainer;
+export default withRouter(SearchBoxContainer);
