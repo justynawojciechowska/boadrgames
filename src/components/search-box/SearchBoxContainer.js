@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import * as API from '../../API';
 
 class SearchBoxContainer extends React.Component {
   static propTypes = {
@@ -18,12 +17,6 @@ class SearchBoxContainer extends React.Component {
     date: '',
     redirect: null
   };
-
-  async componentDidMount() {
-    const data = await API.getAllGames();
-
-    console.log(data);
-  }
 
   redirect = (pathname = '/search-results', state = {}) => {
     if (

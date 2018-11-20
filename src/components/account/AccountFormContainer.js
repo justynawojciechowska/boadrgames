@@ -18,8 +18,6 @@ class AccountFormContainer extends React.Component {
         username: this.state.username,
         password: this.state.password
       });
-
-      console.log(response);
     } catch (e) {
       console.log(e);
     }
