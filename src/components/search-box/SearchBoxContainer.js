@@ -19,6 +19,12 @@ class SearchBoxContainer extends React.Component {
     redirect: null
   };
 
+  async componentDidMount() {
+    const data = await API.getAllGames();
+
+    console.log(data);
+  }
+
   redirect = (pathname = '/search-results', state = {}) => {
     if (
       pathname === '/search-results' &&

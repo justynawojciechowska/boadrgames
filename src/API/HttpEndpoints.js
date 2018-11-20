@@ -6,10 +6,13 @@ export default class HttpEndpoints {
   }
 
   /**
-   * [Values]{@link http://localhost:5000/api/values}
+   * [User]{@link http://localhost:5000/api/user}
    */
-  getValues = (requestOpts = {}) =>
-    this.httpClient.get('/values/', requestOpts);
+  login = (opts, requestOpts = {}) =>
+    this.httpClient.post('/users/login/', opts, requestOpts);
+
+  register = (opts, requestOpts = {}) =>
+    this.httpClient.post('/users/register/', opts, requestOpts);
 
   /**
    * [Games]{@link http://localhost:5000/api/games}

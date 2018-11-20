@@ -11,20 +11,44 @@ function LoginFormComponent(props) {
       <style jsx>{styles}</style>
       <Heading>Zaloguj się</Heading>
 
-      <Input addonBefore="E-mail" />
-      <Input addonBefore="Hasło" />
-      <p>Przypomnij hasło</p>
+      <form
+        onSubmit={event => {
+          event.preventDefault();
+          props.onLogin();
+        }}
+      >
+        <Input
+          addonBefore="Username"
+          onChange={event => props.onUsernameChange(event.target.value)}
+          value={props.username}
+        />
+        <Input
+          addonBefore="Hasło"
+          onChange={event => props.onPasswordChange(event.target.value)}
+          value={props.password}
+          type="password"
+        />
+        <p>Przypomnij hasło</p>
 
-      <div className="login__footer">
-        <Button className="login__button">Zaloguj się</Button>
-        <p className="login__footer-text">Nie masz konta? Zarejestruj się</p>
-      </div>
+        <div className="login__footer">
+          <Button type="submit" className="login__button">
+            Zaloguj się
+          </Button>
+          <p className="login__footer-text">Nie masz konta? Zarejestruj się</p>
+        </div>
+      </form>
     </div>
   );
 }
 
 LoginFormComponent.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+
+  onLogin: PropTypes.func.isRequired,
+  onUsernameChange: PropTypes.func.isRequired,
+  onPasswordChange: PropTypes.func.isRequired
 };
 
 export default LoginFormComponent;

@@ -1,10 +1,14 @@
 import HttpClient from './api';
 import HttpEndpoints from './HttpEndpoints';
 
+const { REACT_APP_HTTP_API_URL } = process.env;
+
+export const httpClient = new HttpClient(REACT_APP_HTTP_API_URL);
 export const {
-  getValues,
+  login,
+  register,
 
   getAllGames,
   getGames,
   getGame
-} = new HttpEndpoints(HttpClient);
+} = new HttpEndpoints(httpClient.client);

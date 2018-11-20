@@ -1,7 +1,16 @@
 import axios from 'axios';
 
-const { REACT_APP_HTTP_API_URL } = process.env;
+export default class HTTPClient {
+  client = null;
+  authToken = null;
 
-export default axios.create({
-  baseURL: REACT_APP_HTTP_API_URL
-});
+  constructor(baseUrl) {
+    this.client = axios.create({
+      baseURL: baseUrl
+    });
+  }
+
+  setAuthToken = token => {
+    this.authToken = token;
+  };
+}

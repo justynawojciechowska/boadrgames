@@ -23,8 +23,8 @@ function AccountFormComponent(props) {
       </style>
       <div className="account-modal__wrapper">
         <div className="account-modal__form">
-          {props.formType === LOGIN_FORM && <LoginForm />}
-          {props.formType === REGISTER_FORM && <RegisterForm />}
+          {props.formType === LOGIN_FORM && <LoginForm {...props} />}
+          {props.formType === REGISTER_FORM && <RegisterForm {...props} />}
         </div>
 
         <div className="account-modal__image" />
