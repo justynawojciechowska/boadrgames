@@ -1,10 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as API from '../../API';
+import { connect } from 'react-redux';
+
+import { account } from '../application-state';
+
+const mapStateToProps = state => ({
+  isLoggedIn: state.isLoggedIn,
+  accountLoading: state.accountLoading
+});
+
+const mapDispatchToProps = dispatch => ({
+  login: (username, password) =>
+    dispatch(account.actions.login(username, password)),
+  restoreSession: () => dispatch(account.actions.restoreSession())
+});
 
 class AccountFormContainer extends React.Component {
   static propTypes = {
-    component: PropTypes.func.isRequired
+    component: PropTypes.func.isRequired,
+
+    login: PropTypes.func.isRequired,
+    restoreSession: PropTypes.func.isRequired,
+    onHideForm: PropTypes.func.isRequired
   };
 
   state = {
@@ -12,15 +29,18 @@ class AccountFormContainer extends React.Component {
     password: ''
   };
 
-  handleLogin = async () => {
-    try {
-      const response = await API.login({
-        username: this.state.username,
-        password: this.state.password
-      });
-    } catch (e) {
-      console.log(e);
+  componentDidMount() {
+    this.props.restoreSession();
+  }
+
+  componentDidUpdate() {
+    if (this.props.isLoggedIn) {
+      this.props.onHideForm();
     }
+  }
+
+  handleLogin = async () => {
+    this.props.login(this.state.username, this.state.password);
   };
 
   handleUsernameChange = value => this.setState({ username: value });
@@ -42,4 +62,7 @@ class AccountFormContainer extends React.Component {
   }
 }
 
-export default AccountFormContainer;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AccountFormContainer);

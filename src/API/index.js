@@ -1,4 +1,4 @@
-import HttpClient from './api';
+import HttpClient from './HttpClient';
 import HttpEndpoints from './HttpEndpoints';
 
 const { REACT_APP_HTTP_API_URL } = process.env;
