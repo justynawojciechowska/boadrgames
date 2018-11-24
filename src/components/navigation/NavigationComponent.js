@@ -1,15 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { Button } from '../common';
 import AccountForm from '../account';
 
 import styles from './NavigationStyles';
+import { account } from '../application-state';
 
 const REGISTER_FORM = 'register';
 const LOGIN_FORM = 'login';
 
+const mapStateToProps = state => ({
+  isLoggedIn: state.isLoggedIn
+});
+
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(account.actions.logout())
+});
+
 class NavigationComponent extends React.Component {
+  static propTypes = {
+    isLoggedIn: PropTypes.bool.isRequired,
+
+    logout: PropTypes.func.isRequired
+  };
+
   state = {
     formVisible: false,
     formType: LOGIN_FORM
@@ -39,21 +56,27 @@ class NavigationComponent extends React.Component {
             </Link>
           </div>
 
-          <ul className="navigation__right">
-            <li className="navigation__item">
-              <Button
-                className="button-reverse"
-                onClick={() => this.handleShowForm(REGISTER_FORM)}
-              >
-                Zarejestruj
-              </Button>
-            </li>
-            <li className="navigation__item">
-              <Button onClick={() => this.handleShowForm(LOGIN_FORM)}>
-                Zaloguj
-              </Button>
-            </li>
-          </ul>
+          {this.props.isLoggedIn ? (
+            <Button className="button-reverse" onClick={this.props.logout}>
+              Logout
+            </Button>
+          ) : (
+            <ul className="navigation__right">
+              <li className="navigation__item">
+                <Button
+                  className="button-reverse"
+                  onClick={() => this.handleShowForm(REGISTER_FORM)}
+                >
+                  Zarejestruj
+                </Button>
+              </li>
+              <li className="navigation__item">
+                <Button onClick={() => this.handleShowForm(LOGIN_FORM)}>
+                  Zaloguj
+                </Button>
+              </li>
+            </ul>
+          )}
         </div>
         <AccountForm
           formVisible={this.state.formVisible}
@@ -65,4 +88,7 @@ class NavigationComponent extends React.Component {
   }
 }
 
-export default NavigationComponent;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavigationComponent);

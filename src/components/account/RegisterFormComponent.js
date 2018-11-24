@@ -12,9 +12,10 @@ function RegisterFormComponent(props) {
 
       <Heading>Zarejestruj się</Heading>
 
+      <Input addonBefore="Imię" />
+      <Input addonBefore="Nazwisko" />
       <Input addonBefore="E-mail" />
       <Input addonBefore="Hasło" />
-      <Input addonBefore="Powtórz hasło" />
 
       <div className="register__footer">
         <Button>Zarejestruj</Button>
